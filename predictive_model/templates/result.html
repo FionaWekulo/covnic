@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID CLINIC </title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel = "stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+      
+<header class="header">
+
+<a href="#" class="logo"> <i class="fas fa-heartbeat"></i>Covnic </a>
+
+<nav class="navbar">
+  <a href="http://localhost/project/patient/welcome.php"><i class="fa fa-home"></i>home</a>
+  <a href="http://127.0.0.1:5000/"><i class="fa fa-medkit"></i>prediction</a>
+<a href="http://localhost/project/patient/dashboard.php"><i class="fa fa-hospital-o"></i>appointment </a>
+<a href="http://localhost/project/patient/vaccination.php"><i class="fa fa-user-plus"></i>vaccination </a>
+<a href="http://localhost/project/patient/reviews.php"><i class="fa fa-quote-left"></i>reviews</a>
+ 
+</nav>
+
+<div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+      </head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+   
+<section class="book" id="book">
+
+  <br><br><h1 class="heading"> <span>COVID STATUS </span> PREDICTION RESULT</h1> <br><br><br><br>
+  <h2 class="head"> 
+    {{ prediction_text }}</h2>      
+  <div class="row">
+
+    <div class="image">
+        <img src="../image/publish-article-animate.svg" alt="">
+    </div>
+    
+
+</div>
+
+</body>
+</html>

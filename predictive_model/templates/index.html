@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID CLINIC </title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel = "stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+      
+<header class="header">
+
+<a href="#" class="logo"> <i class="fas fa-heartbeat"></i>Covnic </a>
+
+<nav class="navbar">
+                  <a href="http://localhost/project/patient/welcome.php"><i class="fa fa-home"></i>home</a>
+                  <a href="http://127.0.0.1:5000/"><i class="fa fa-medkit"></i>prediction</a>
+                <a href="http://localhost/project/patient/dashboard.php"><i class="fa fa-hospital-o"></i>appointment </a>
+                <a href="http://localhost/project/patient/vaccination.php"><i class="fa fa-user-plus"></i>vaccination </a>
+                <a href="http://localhost/project/patient/reviews.php"><i class="fa fa-quote-left"></i>reviews</a>
+ 
+</nav>
+
+<div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+      </head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+   
+<section class="book" id="book">
+
+  <br><br><h1 class="heading"> <span>COVID STATUS </span> PREDICTION</h1>  
+    
+  <div class="row">
+
+    <div class="image">
+        <img src="{{predict_image}}">
+    </div>
+    
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    
+          <h1>Enter 1 if you have experienced any of these:</h1>
+          <h1>Enter 0 if you have not experienced any of these:</h1>
+          <br>
+
+
+    	<input class="box" type="text" name="Breathing Problem" placeholder="Breathing Problem" required="required" />
+      <input  class="box" type="text" name="Fever" placeholder="Fever" required="required" />
+		<input  class="box" type="text" name="Dry Cough" placeholder="Dry Cough" required="required" />
+		<input  class="box" type="text" name="Sore throat" placeholder="Sore throat" required="required" />
+    <br>
+    <input  class="box" type="text" name="Running Nose" placeholder="Running Nose" required="required" />
+    <input  class="box" type="text" name="Asthma" placeholder="Asthma" required="required" />
+<input  class="box" type="text" name="Chronic Lung Disease" placeholder="Chronic Lung Disease" required="required" />
+<input  class="box" type="text" name="Headache" placeholder="Headache" required="required" />
+<br>
+<input  class="box" type="text" name="Heart Disease" placeholder="Heart Disease" required="required" />
+        <input  class="box" type="text" name="Diabetes" placeholder="Diabetes" required="required" />
+		<input  class="box" type="text" name="Hyper Tension" placeholder="Hyper Tension" required="required" />
+		<input  class="box" type="text" name="Fatigue" placeholder="Fatigue" required="required" />
+    <br>
+    <input  class="box" type="text" name="Gastrointestinal diseases" placeholder="Gastrointestinal dideases" required="required" />
+        <input  class="box" type="text" name="Abroad travel" placeholder="Abroad travel" required="required" />
+		<input  class="box" type="text" name="Contact with COVID Patient" placeholder="Contact with COVID Patient" required="required" />
+		<input  class="box" type="text" name="Attended Large Gathering" placeholder="Attended Large Gathering" required="required" />
+    <br>
+    <input  class="box" type="text" name="Visited Public Exposed Places" placeholder="Visited Public Exposed Places" required="required" />
+        <input  class="box" type="text" name="Family working in Public Exposed Places" placeholder="Family working in Public Exposed Places" required="required" />
+		<input  class="box" type="text" name="Wearing Masks" placeholder="Wearing Masks" required="required" />
+		<input  class="box" type="text" name="Sanitization" placeholder="Sanitization" required="required" />
+    <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+  </div>
+  </section>
+
+
+</body>
+</html>
