@@ -1,0 +1,90 @@
+<?php
+    include_once './connect.php';
+  
+       
+
+        if(isset($_POST['send'])){
+
+         
+          $patient_email_address = $_POST['patient_email_address'];
+          $message= $_POST['message'];
+          
+          $insert = "INSERT INTO contact(patient_email_address,message) VALUES ('$patient_email_address','$message');";
+          $result = mysqli_query($conn, $insert);
+
+        
+        }
+
+        
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVNIC-CONTACT </title>
+
+  <!-- font awesome cdn link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css1/style.css">
+
+
+    
+<header class="header">
+
+<a href="#" class="logo"> <i class="fas fa-heartbeat"></i>Covnic </a>
+
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <a href="aboutus.html">About</a>
+    <a href="patient/register.php">Patient Registration</a>
+    <a href="jurisdiction.html">Log In</a>
+
+</nav>
+
+<div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+</head>
+<body>
+<!-- booking section starts   -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section class="book" id="book">
+
+    <br><br><h1 class="heading"> <span>CONTACT </span> US </h1>    
+
+    <div class="row">
+
+        <div class="image">
+            <img src="./image/get-in-touch-animate.svg" alt="" width="30%" height="300px">
+        </div>
+
+        <form action="contact.html" method="post">
+            <h3>Talk to us</h3>
+            <input type="email" name="patient_email_address" placeholder="your email" class="box">
+            <input type="text" name="message" placeholder="your message" class="box">
+            <input type="submit" name="send" value="send" class="btn">
+           
+        </form>
+
+    </div>
+
+</section>
+
+<!-- booking section ends -->
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>
